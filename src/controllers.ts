@@ -11,14 +11,9 @@ export const createDesk: RequestHandler<{}, {}, Parameters<typeof createNewDesk>
     }
 }
 
-let i = 0;
 export const getAllDesks: RequestHandler = (req, res: Response) => {
-    i++;
-    if (i % 2 === 0) {
-        res.status(404).send('404 Not Found');
-    } else {
-        res.status(200).json(desks);
-    }
+    console.log("getAllDesks endpoint called");
+    res.status(200).json(desks);
 }
 
 export const getDeskById: RequestHandler<{ desk_id: string }> = (req, res) => {
